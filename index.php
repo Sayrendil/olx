@@ -19,6 +19,8 @@
     $categories = mysqli_query($connect, $sqlCategories);
     $categories = mysqli_fetch_all($categories);
 
+    // die(var_dump($_SESSION['errors']));
+
 ?>
         <ul class="nav grey lighten-4 py-4">
             <div class="container-fluid d-flex">

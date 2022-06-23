@@ -68,7 +68,7 @@
                             <label for="image">Фотография: </label>
                             <input type="file" class="form-control" name="image" id="image">
                         </div>
-                        <button type="submit" class="btn btn-success">Добавить</button>
+                        <button type="submit" class="btn btn-success" name="addAdvert" value="">Добавить</button>
                     </form>
                 </div>
             </div>
