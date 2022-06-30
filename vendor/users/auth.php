@@ -3,16 +3,16 @@
     require('../../../olx/config/db.php');
     session_start();
 
-    if(!isset($_SESSION['error_auth'])) {
-        $_SESSION['error_auth'] = [];
-    }
+    if(isset($_SESSION['user'])) {
 
-    if(!isset($_SESSION['user'])) {
+        header("Location: /views/user/login.php?error=auth");
+
+    } else {
 
         if(!empty($_POST['login']) && !empty($_POST['password'])) {
 
-            $login = htmlspecialchars($_POST['login']);
-            $pass = htmlspecialchars($_POST['password']);
+            $login = htmlspecialchars(trim($_POST['login']));
+            $pass = htmlspecialchars(trim($_POST['password']));
 
             $sql = "SELECT * FROM users WHERE users.login = '$login' AND users.password = '$pass'";
             $user = mysqli_query($connect, $sql);
@@ -22,15 +22,9 @@
                 $_SESSION['user'] = $user;
             }
 
-            header("Location: ../../../olx/index.php");
+            header("Location: ../../index.php");
 
         }
-
-    } else {
-
-        $_SESSION['error_auth']['session'] = "Вы уже авторизованы!";
-
-        header("Location: ../../../olx/index.php");
 
     }
 

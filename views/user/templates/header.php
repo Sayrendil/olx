@@ -20,11 +20,11 @@
         <!-- Google Fonts Roboto -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
         <!-- Bootstrap core CSS -->
-        <link rel="stylesheet" href="../../../../olx/views/user/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/views/user/css/bootstrap.min.css">
         <!-- Material Design Bootstrap -->
-        <link rel="stylesheet" href="../../../../olx/views/user/css/mdb.min.css">
+        <link rel="stylesheet" href="/views/user/css/mdb.min.css">
         <!-- Your custom styles (optional) -->
-        <link rel="stylesheet" href="../../../../olx/views/user/css/style.css">
+        <link rel="stylesheet" href="/views/user/css/style.css">
     </head>
     <body>
         <?php
@@ -48,17 +48,17 @@
                     <!-- Left links -->
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" href="../../../../olx/views/user/adverts/adverts.php">Объявления</a>
+                            <a class="nav-link" href="/views/user/adverts/adverts.php">Объявления</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../../../../olx/views/user/adverts/addAdvert.php">Подать объявление</a>
+                            <a class="nav-link" href="/views/user/adverts/addAdvertC.php">Подать объявление</a>
                         </li>
                     </ul>
                     <!-- Left links -->
 
                     <div class="d-flex ml-auto">
-                        <a href="../../../../olx/views/user/login.php" class="btn btn-link px-3 me-2">Войти</a>
-                        <a href="../../../../olx/views/user/register.php" class="btn btn-white me-3">Зарегистрироваться</a>
+                        <a href="/views/user/login.php" class="btn btn-link px-3 me-2">Войти</a>
+                        <a href="/views/user/register.php" class="btn btn-white me-3">Зарегистрироваться</a>
                     </div>
                 </div>
                 <!-- Collapsible wrapper -->
@@ -89,16 +89,16 @@
                     <!-- Left links -->
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" href="../../../../olx/views/user/adverts/adverts.php">Объявления</a>
+                            <a class="nav-link" href="/views/user/adverts/adverts.php">Объявления</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../../../../olx/views/user/adverts/addAdvert.php">Подать объявление</a>
+                            <a class="nav-link" href="/views/user/adverts/addAdvertC.php">Подать объявление</a>
                         </li>
                     </ul>
                     <!-- Left links -->
 
                     <div class="d-flex ml-auto">
-                        <a href="../../../../olx/vendor/users/exit.php" class="btn btn-link px-3 me-2">Выйти</a>
+                        <a href="/vendor/users/exit.php" class="btn btn-link px-3 me-2">Выйти</a>
                     </div>
                 </div>
                 <!-- Collapsible wrapper -->

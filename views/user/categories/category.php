@@ -49,7 +49,7 @@
                     foreach($categories as $category) {
                 ?>
                 <li class="nav-item">
-                    <a class="btn btn-orange text-center" href="../../../../olx/views/user/categories/category.php?id=<?=$category[0]?>"><?= $category[1] ?></a>
+                    <a class="btn btn-orange text-center" href="/views/user/categories/category.php?id=<?=$category[0]?>"><?= $category[1] ?></a>
                 </li>
                 <?php
                     }
@@ -63,7 +63,7 @@
                     foreach($subcategories as $subcategory) {
                 ?>
                 <li class="nav-item">
-                    <a class="btn btn-orange text-center" href="../../../../olx/views/user/categories/subcategory.php?id=<?=$subcategory['subcat_id']?>"><?= $subcategory['subcat_name'] ?></a>
+                    <a class="btn btn-orange text-center" href="/views/user/categories/subcategory.php?id=<?=$subcategory['subcat_id']?>"><?= $subcategory['subcat_name'] ?></a>
                 </li>
                 <?php
                     }
@@ -85,6 +85,7 @@
         <div class="row">
             <?php
                 // die(var_dump($adverts));
+            if(!empty($adverts)) {
                 foreach($adverts as $advert) {
             ?>
             <div class="col-md-4 mt-5">
@@ -97,6 +98,11 @@
                     </div>
                 </div>
             </div>
+            <?php
+                    }
+                } else {
+            ?>
+            <h3>Товаров нет</h3>
             <?php
                 }
             ?>

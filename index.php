@@ -28,7 +28,7 @@
                     foreach($categories as $category) {
                 ?>
                 <li class="nav-item">
-                    <a class="btn btn-orange text-center" href="../../../../olx/views/user/categories/category.php?id=<?=$category[0]?>"><?= $category[1] ?></a>
+                    <a class="btn btn-orange text-center" href="/views/user/categories/category.php?id=<?=$category[0]?>"><?= $category[1] ?></a>
                 </li>
                 <?php
                     }
@@ -52,11 +52,11 @@
                 ?>
                 <div class="col-4 my-3">
                     <div class="card">
-                        <img src="../olx/views/user/images/<?= $advert['image_image'] ?>" class="card-img-top" alt=""/>
+                        <img src="/views/user/images/<?= $advert['image_image'] ?>" class="card-img-top" alt=""/>
                         <div class="card-body">
                             <h5 class="card-title"><?= $advert['advert_title'] ?></h5>
                             <h6 style="color: #32a852;"><?= $advert['advert_price'] ?></h6>
-                            <a href="../olx/views/user/adverts/advert.php?id=<?= $advert['advert_id'] ?>" class="btn btn-orange">Посмотреть</a>
+                            <a href="/views/user/adverts/advert.php?id=<?= $advert['advert_id'] ?>" class="btn btn-orange">Посмотреть</a>
                         </div>
                     </div>
                 </div>
@@ -67,5 +67,5 @@
         </div>
 
 <?php
-    include('../olx/views/user/templates/footer.php')
+    include('/views/user/templates/footer.php')
 ?>

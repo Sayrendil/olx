@@ -26,7 +26,7 @@
                 foreach($categories as $category) {
             ?>
             <li class="nav-item">
-                <a class="btn btn-orange text-center" href="../../../../olx/views/user/categories/category.php?id=<?=$category[0]?>"><?= $category[1] ?></a>
+                <a class="btn btn-orange text-center" href="/views/user/categories/category.php?id=<?=$category[0]?>"><?= $category[1] ?></a>
             </li>
             <?php
                 }
@@ -42,7 +42,7 @@
             ?>
             <div class="col-md-4 mt-5">
                 <div class="card">
-                    <img src="../../../../olx/views/user/images/<?= $advert['image_image'] ?>" class="card-img-top" alt=""/>
+                    <img src="/views/user/images/<?= $advert['image_image'] ?>" class="card-img-top" alt=""/>
                     <div class="card-body">
                         <h5 class="card-title"><?= $advert['advert_title'] ?></h5>
                         <h5 class=""><?= $advert['advert_price'] ?> тг.</h5>

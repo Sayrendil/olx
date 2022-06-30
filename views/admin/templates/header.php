@@ -26,43 +26,47 @@
     </head>
     <body>
         <?php
-            if(!isset($_SESSION['user'])) {
+            if(isset($_SESSION['user'])) {
+                if($_SESSION['user']['role_id'] == 2) {
         ?>
-        <nav class="navbar navbar-expand-lg navbar-dark orange lighten-1">
-            <!-- Container wrapper -->
-            <div class="container">
-                <!-- Navbar brand -->
-                <a class="navbar-brand me-2" href="../../../../olx/index.php">
-                    OLX
-                </a>
+            <nav class="navbar navbar-expand-lg navbar-dark orange lighten-1">
+                <!-- Container wrapper -->
+                <div class="container">
+                    <!-- Navbar brand -->
+                    <a class="navbar-brand me-2" href="../../../views/admin/index.php">
+                        ADMIN
+                    </a>
 
-                <!-- Toggle button -->
-                <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarButtonsExample" aria-controls="navbarButtonsExample" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="fas fa-bars"></i>
-                </button>
+                    <!-- Toggle button -->
+                    <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarButtonsExample" aria-controls="navbarButtonsExample" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-bars"></i>
+                    </button>
 
-                <!-- Collapsible wrapper -->
-                <div class="collapse navbar-collapse" id="navbarButtonsExample">
-                    <!-- Left links -->
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link" href="../../../../olx/views/admin/adverts/index.php">Объявления</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="../../../../olx/views/admin/categories/categories.php">Категории</a>
-                        </li>
-                    </ul>
-                    <!-- Left links -->
-
-                    <div class="d-flex ml-auto">
-                        <a href="../../../../olx/views/user/login.php" class="btn btn-link px-3 me-2">Войти</a>
-                        <a href="../../../../olx/views/user/register.php" class="btn btn-white me-3">Зарегистрироваться</a>
+                    <!-- Collapsible wrapper -->
+                    <div class="collapse navbar-collapse" id="navbarButtonsExample">
+                        <!-- Left links -->
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link" href="../../../views/admin/users/users.php">Пользователи</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../../../../olx/views/admin/categories/categories.php">Категории</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../../../../olx/views/admin/adverts/adverts.php">Объявления</a>
+                            </li>
+                        </ul>
                     </div>
+                    <!-- Collapsible wrapper -->
                 </div>
-                <!-- Collapsible wrapper -->
-            </div>
-            <!-- Container wrapper -->
-        </nav>
+                <!-- Container wrapper -->
+            </nav>
         <?php
+                } else {
+        ?>
+        <h1>У вас не достаточно прав"!</h1>
+        <?php
+        exit;
+                }
             }
         ?>

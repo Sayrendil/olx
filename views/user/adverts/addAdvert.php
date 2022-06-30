@@ -5,22 +5,18 @@
 
     if(isset($_SESSION['user'])) {
 
+        if(isset($_GET['category'])) {
+            $category_id = $_GET['category'];
+        }
+
         $sqlCategories = "SELECT * FROM categories";
 
         $categories = mysqli_query($connect, $sqlCategories);
         $categories = mysqli_fetch_all($categories);
 
-        $sqlSubCat = "SELECT 
-        subcategories.id as subcat_id,
-        subcategories.name as subcat_name,
-        subcategories.category_id as subcat_cat_id,
-        categories.id as cat_id,
-        categories.name as cat_name
-        FROM subcategories
-        INNER JOIN categories ON categories.id = subcategories.category_id
-        WHERE categories.id = subcategories.category_id";
-
+        $sqlSubCat = "SELECT * FROM subcategories WHERE category_id = '$category_id'";
         $subcategories = mysqli_query($connect, $sqlSubCat);
+        $subcategories = mysqli_fetch_all($subcategories);
 
 ?>
         <ul class="nav grey lighten-4 py-4">
@@ -39,18 +35,21 @@
         <div class="container mt-5">
             <div class="row">
                 <div class="col-md-8 offset-2">
-                    <form action="../../../../olx/vendor/adverts/create.php" method="POST" name="addAdvert">
+                    <form action="/vendor/adverts/create.php" method="POST" name="addAdvert" enctype="multipart/form-data">
                         <div class="form-group">
                             <label for="Title">Название: </label>
                             <input type="text" class="form-control" name="title" id="title">
                         </div>
                         <div class="form-group">
-                            <label for="category">ПодКатегории: </label>
-                            <select name="category" id="category" class="form-control">
+                            <input type="hidden" name="category" id="category" value="<?= $category_id ?>">
+                        </div>
+                        <div class="form-group">
+                            <label for="category">Раздел: </label>
+                            <select name="subcategory" id="subcategory" class="form-control">
                             <?php
-                                foreach($subcategories as $key => $subcategory) {
+                                foreach($subcategories as $subcategory) {
                             ?>
-                                <option value="<?= $subcategory['subcat_id'] ?>"><?= $subcategory['subcat_name'] ?></option>
+                                <option value="<?= $subcategory[0] ?>"><?= $subcategory[1] ?></option>
                             <?php
                                 }
                             ?>
@@ -68,7 +67,7 @@
                             <label for="image">Фотография: </label>
                             <input type="file" class="form-control" name="image" id="image">
                         </div>
-                        <button type="submit" class="btn btn-success" name="addAdvert" value="">Добавить</button>
+                        <button type="submit" class="btn btn-success" name="addAdvert">Добавить</button>
                     </form>
                 </div>
             </div>
